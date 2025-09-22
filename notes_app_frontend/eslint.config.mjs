@@ -8,7 +8,14 @@ export default [
     languageOptions: {
       parser: tsParser,
       globals: {
-        React: 'readable'  // Add this line to define React as a global
+        React: 'readable',  // Add this line to define React as a global
+        // DOM globals for TS to satisfy no-undef in TSX
+        window: 'readable',
+        document: 'readable',
+        navigator: 'readable',
+        HTMLVideoElement: 'readable',
+        HTMLElement: 'readable',
+        KeyboardEvent: 'readable',
       }
     },
     plugins: {
